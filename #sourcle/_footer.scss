@@ -1,0 +1,40 @@
+.footer{
+    @include flex(column, center, center, nowrap);
+    padding: 80px 0;
+    .footer_rights{
+        width: 100%;
+        padding-top: 32px;
+        @include flex(row, center, center, nowrap);
+        p{@include font(16px, 400, white, 150%); margin: 0 12px; text-decoration: none;}
+        div{
+            @include flex(row, center, center, nowrap);
+            a{@include font(16px, 400, white, 150%); margin: 0 12px; text-decoration: none; &:hover{text-decoration: underline;}}
+        }
+    }
+    @media(max-width: 990px){
+        .footer_content{
+            width: auto;
+            @include flex(column, center, center, nowrap);
+            .footer_menu{margin: 10px;}
+            .footer_media{
+                margin :20px 10px;
+            }
+        }
+        .footer_rights{
+            flex-wrap: wrap-reverse;
+            flex-direction: column;
+            p, a{margin: 10px 0;}
+        }
+    }
+    @media(max-width: 480px){
+        .footer_content{
+            .footer_menu{
+                @include flex(column, flex-start, center, nowrap);
+                .footer_menu_item{margin :16px;}
+            }
+        }
+        .footer_rights{
+            div{  @include flex(column, flex-start, center, nowrap);a{margin: 12px;}}
+        }
+    }
+}

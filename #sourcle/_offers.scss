@@ -1,0 +1,46 @@
+.offers{
+    @include flex(column, center, center, nowrap);
+    .offers_head{
+        h1{  @include font(24px, 600, white, 120%);}
+    }
+    .offers_content{
+        @include flex(row, center, center, wrap);
+        .offers_content_item{
+            @include flex(column, flex-start, flex-start, nowrap);
+            width: 400px;
+            height: auto;
+            padding: 10px;
+            margin: 10px 20px;
+            position: relative;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            backdrop-filter: blur(0px);
+            overflow: hidden;
+            img{
+                width: 200px;
+                height: auto;
+                margin: 0px auto;
+            }
+            h3{@include font(24px, 600, white, 120%);z-index: 3;}
+            p{
+                background-color: #356635;
+                padding: 3px 10px;
+                @include font(16px, 600, white, 120%);
+                z-index: 3;
+            }
+            .action{
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 4;
+                background-color: rgb(240, 41, 41);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                @include font(14px, 500, white, 120%);
+                @include flex(row, center, center, nowrap);
+            }
+        }
+    }
+}
